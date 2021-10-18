@@ -1108,12 +1108,12 @@ body.show-nav .header {
 }
 
 .benefits__list:before {
-	background-image: url(./img/pin-start.svg);
+	background-image: url("./img/pin-start.svg");
 	top: 2px
 }
 
 .benefits__list:after {
-	background-image: url(./img/pin-end.svg);
+	background-image: url("./img/pin-end.svg");
 	bottom: -16px
 }
 
