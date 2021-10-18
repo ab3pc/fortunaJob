@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import  logoFJ from "../css/img/LogoFJ.png";
 
 import * as Scroll from "react-scroll";
 let LinkAnchor = Scroll.Link;
@@ -48,7 +49,7 @@ function Header({ setVisibleModal }) {
       <div className="container">
         <div className="header__inner">
           <NavLink className="header__logo" to="/">
-            <img src="img/LogoFJ.png" alt="Fortuna Job Sp z o.o." />
+            <img src={logoFJ} alt="Fortuna Job Sp z o.o." />
             <span className="header__logo-name ">Fortuna Job</span>
           </NavLink>
 
