@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router";
+import "./App.css";
+import { Header, Footer, Modal } from "./components";
+import { Home, Blog } from "./components/pages";
+import { CSSTransition } from 'react-transition-group';
 
 function App() {
+
+  const [visibleModal, setVisibleModal] = React.useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="page">
+      <Header setVisibleModal = {setVisibleModal}/>
+      <Route path="/" render={() => <Home setVisibleModal = {setVisibleModal}/>} exact />
+      <Route path="/blog" component={Blog} exact />
+      <Footer />
+
+
+      <CSSTransition
+          in={visibleModal}
+          timeout={300}
+          classNames="dialog"
+          unmountOnExit
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+        
+       <Modal setVisibleModal = {setVisibleModal} />
+    
+        </CSSTransition>
+
+      
+     </div>
   );
 }
 
