@@ -2,12 +2,16 @@ import React from "react";
 import classNames from "classnames";
 
 function Modal({ setVisibleModal }) {
+
+  const handlesetVisibleModal = () => {
+    setVisibleModal(false)
+  }
   return (
     <>
       {
         <div
           className={classNames("modal")}
-          onClick={() => setVisibleModal(false)}
+          onClick={handlesetVisibleModal}
         >
           <div className="modal__inner">
             <div
@@ -78,7 +82,7 @@ function Modal({ setVisibleModal }) {
                   className="modal__close-img"
                   src="img/close.svg"
                   alt=""
-                  onClick={() => setVisibleModal(false)}
+                  onClick={handlesetVisibleModal}
                 />
               </button>
             </div>

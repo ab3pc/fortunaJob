@@ -3,6 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types"; 
 import { ModalForVacancies } from ".";
 import { Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
 function VacanciesBloc({
   name,
@@ -62,7 +63,18 @@ const [modalForVacancies, setModalForVacancies] = React.useState(false);
         </Link>
      </div>
       </div>
-         {modalForVacancies && <ModalForVacancies setModalForVacancies = {setModalForVacancies} name = {name} workPlace = {workPlace} salary = {salary} />}
+
+      <CSSTransition
+          in={modalForVacancies}
+          timeout={300}
+          unmountOnExit
+          classNames="dialog"
+        >
+        
+        <ModalForVacancies setModalForVacancies = {setModalForVacancies} name = {name} workPlace = {workPlace} salary = {salary} />
+    
+        </CSSTransition>
+
     </>
     
   );

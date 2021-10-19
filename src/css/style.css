@@ -223,6 +223,8 @@ body.show-nav .header {
 	background-size: cover
 }
 
+
+
 .intro--privacy {
 	height: 350px;
 	background: #000 url("./img/textBg.jpg") no-repeat center;
@@ -1394,6 +1396,11 @@ body.show-nav .header {
 	transform: scale(0.9);
 	transition: opacity 300ms, transform 300ms;
   }
+
+
+.blog .news .news__item {
+	width: 100% ;
+}
 
 
 .modalForVac {

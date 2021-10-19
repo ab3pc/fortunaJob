@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { NavLink } from "react-router-dom";
-import  logoFJ from "../css/img/LogoFJ.png";
+import { Link } from "react-router-dom";
+import logoFJ from "../css/img/LogoFJ.png";
 
 import * as Scroll from "react-scroll";
 let LinkAnchor = Scroll.Link;
@@ -14,9 +14,8 @@ function Header({ setVisibleModal }) {
   };
 
   const handleSetVisibleModal = () => {
-      setVisibleModal(true);
- 
-  }
+    setVisibleModal(true);
+  };
 
   const headerRef = React.useRef();
 
@@ -48,10 +47,10 @@ function Header({ setVisibleModal }) {
     >
       <div className="container">
         <div className="header__inner">
-          <NavLink className="header__logo" to="/">
+          <Link className="header__logo" to="/">
             <img src={logoFJ} alt="Fortuna Job Sp z o.o." />
             <span className="header__logo-name ">Fortuna Job</span>
-          </NavLink>
+          </Link>
 
           <nav className={clsName} id="nav">
             <LinkAnchor
@@ -130,10 +129,7 @@ function Header({ setVisibleModal }) {
               Блог
             </LinkAnchor>
 
-            <span
-                          className="nav__link"
-              onClick={handleSetVisibleModal}
-            >
+            <span className="nav__link" onClick={handleSetVisibleModal}>
               Связь с нами
             </span>
           </nav>
